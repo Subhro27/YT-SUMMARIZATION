@@ -1,0 +1,35 @@
+/* Custom styles for visually appealing UI */
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Input glow effect */
+input:focus {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Fade-in animation for result */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button hover glow */
+button:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Card hover effect */
+div.bg-gray-800\/50:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}

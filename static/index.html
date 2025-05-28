@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summarizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex flex-col items-center justify-center text-gray-100">
+    <div class="bg-gray-800/50 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-md sm:max-w-lg transform transition-all duration-500">
+        <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">YouTube Video Summarizer</h1>
+        <div class="mb-6">
+            <label for="youtube-url" class="block text-sm font-medium text-gray-300 mb-2">Enter YouTube URL</label>
+            <input type="text" id="youtube-url" placeholder="https://www.youtube.com/watch?v=..." class="w-full p-4 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-100 placeholder-gray-400 transition-all duration-300 hover:border-blue-400">
+        </div>
+        <button onclick="summarizeVideo()" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-lg font-semibold hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all duration-300">Summarize</button>
+        <div id="loading" class="hidden mt-6 flex justify-center items-center text-gray-400">
+            <svg class="animate-spin h-8 w-8 text-blue-400 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Processing...</span>
+        </div>
+        <div id="error" class="hidden mt-6 text-center text-red-400 bg-red-900/30 p-4 rounded-lg"></div>
+        <div id="result" class="hidden mt-6 animate-fade-in">
+            <h2 class="text-lg font-semibold text-gray-200">Video ID: <span id="video-id" class="text-blue-400"></span></h2>
+            <h2 class="text-lg font-semibold text-gray-200">Source: <span id="source" class="text-blue-400"></span></h2>
+            <h2 class="text-lg font-semibold text-gray-200 mt-4">Summary:</h2>
+            <p id="summary" class="text-gray-300 bg-gray-700/50 p-4 rounded-lg"></p>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
